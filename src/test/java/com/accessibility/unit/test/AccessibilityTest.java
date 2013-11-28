@@ -17,7 +17,7 @@ public class AccessibilityTest {
 
 	@Test
 	public void parseCorrectReport() throws IOException {
-		File file = new File("results.txt");
+		File file = new File("src/test/resources/results.txt");
 		String content = FileUtils.readFileToString(file);
 		AccessibilityScanner scanner = new AccessibilityScanner(null);
 
