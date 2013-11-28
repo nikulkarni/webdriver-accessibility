@@ -12,6 +12,26 @@ All you need to do in your project is
    AccessibilityScanner scanner = new AccessibilityScanner(driver);
    Map<String, Object> audit_report = scanner.runAccessibilityAudit();
 ```
+You could do this in your tests,
+
+```
+if (audit_report.containsKey("error")) {
+ List<Result> errors = (List<Result>) audit_report.get("error");
+ assertThat("No accessibility errors expected", errors.size(),equalTo(0));
+}
+```
+If you want specific details of the error, you could scan through the List of errors like below. Similarly you could scan all warnings for details.
+
+```
+List<Result> errors = (List<Result>) audit_report.get("error"); 
+for (Result error : errors) {
+ log.info(error.getRule());//e.g. AX_TEXT_01
+ log.info(error.getUrl());//e.g. Url explaining the error
+ for (String element : error.getElements()) //violated elements
+  log.info(element);//e.g. #myForm > P > INPUT
+}
+```
+
 Interpreting audit report
 ===========================
 Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Object> audit_report``` and it contains following keys,
