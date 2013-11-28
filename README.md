@@ -26,7 +26,7 @@ If you want specific details of the error, you could scan through the List of er
 List<Result> errors = (List<Result>) audit_report.get("error"); 
 for (Result error : errors) {
  log.info(error.getRule());//e.g. AX_TEXT_01
- log.info(error.getUrl());//e.g. Url explaining the error
+ log.info(error.getUrl());//e.g. [GoogleChrome accessibility-developer-tools][3] audit rules URL
  for (String element : error.getElements()) //violated elements
   log.info(element);//e.g. #myForm > P > INPUT
 }
@@ -43,7 +43,7 @@ Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Ob
   /** @type {String} */
   plain_report, //contains plain report
   /** @type {byte[]} */
-  screenshot, //contains screenshot for reporting
+  screenshot, //contains screenshot with bordered elements (red:errors, yellow:warnings)
 ```
 ```Result``` object is made of following,
 ```
@@ -52,13 +52,16 @@ Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Ob
   /** @type {List<String>} */
   elements, //contains all element locators with errors/warnings
   /** @type {String} */
-  information_link, //link to [GoogleChrome accessibility-developer-tools audit rules][3] wiki for more details
+  information_link, //link to [GoogleChrome accessibility-developer-tools][3] audit rules wiki for more details
 ```
 [1]: https://code.google.com/p/selenium/wiki/GettingStarted "selenium webdriver"
 [2]: https://github.com/GoogleChrome/accessibility-developer-tools "GoogleChrome accessibility-developer-tools"
 [3]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules "GoogleChrome accessibility-developer-tools audit rules"
 
-Contributing: Fork the project and submit pull request if you like to add a feature/fix bugs etc.
+Contributing: 
+=======================
+Fork the project and submit pull request if you like to add a feature/fix bugs etc.
+Disclaimer: I am no accessibility expert. I am open for suggestions.
 
 Contact me directly
 =======================
