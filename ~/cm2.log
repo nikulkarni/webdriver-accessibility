@@ -1,0 +1,21 @@
+INFO main com.accessibility.AccessibilityScanner - *** Begin accessibility audit results ***
+An accessibility audit found 
+Errors:
+Error: AX_TEXT_01 (Controls and media elements should have labels) failed on the following elements (1 - 5 of 27):
+#myForm > P > INPUT
+#myForm > P > INPUT:nth-of-type(2)
+#myForm > P > INPUT:nth-of-type(3)
+#myForm > P > INPUT:nth-of-type(4)
+#myForm > P > INPUT:nth-of-type(5)
+See https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_01--controls-and-media-elements-should-have-labels for more information.
+
+
+*** End accessibility audit results ***
+INFO main com.accessibility.AccessibilityScanner - ++++++++Injecting jQuery+++++++++++++
+INFO main com.accessibility.integration.test.AccessibilityStepDefs - AX_TEXT_01 (Controls and media elements should have labels) failed on the following elements (1 - 5 of 27):
+INFO main com.accessibility.integration.test.AccessibilityStepDefs - See https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_01--controls-and-media-elements-should-have-labels for more information.
+INFO main com.accessibility.integration.test.AccessibilityStepDefs - #myForm > P > INPUT
+INFO main com.accessibility.integration.test.AccessibilityStepDefs - #myForm > P > INPUT:nth-of-type(2)
+INFO main com.accessibility.integration.test.AccessibilityStepDefs - #myForm > P > INPUT:nth-of-type(3)
+INFO main com.accessibility.integration.test.AccessibilityStepDefs - #myForm > P > INPUT:nth-of-type(4)
+INFO main com.accessibility.integration.test.AccessibilityStepDefs - #myForm > P > INPUT:nth-of-type(5)

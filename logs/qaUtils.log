@@ -1,0 +1,18 @@
+INFO main com.paypal.accessibility.AccessibilityScanner - *** Begin accessibility audit results ***
+An accessibility audit found 
+Warnings:
+Warning: AX_TEXT_02 (Images should have an alt attribute) failed on the following elements (1 - 5 of 5):
+#nearby-locations > .poi-list-container > .poi-list-element > .PoiIcons > A > IMG
+#nearby-locations > .poi-list-container > .poi-list-element:nth-of-type(2) > .PoiIcons > A > IMG
+#nearby-locations > .poi-list-container > .poi-list-element:nth-of-type(3) > .PoiIcons > A > IMG
+#nearby-locations > .poi-list-container > .poi-list-element:nth-of-type(4) > .PoiIcons > A > IMG
+#nearby-locations > .poi-list-container > .poi-list-element:nth-of-type(5) > .PoiIcons > A > IMG
+See https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_02--images-should-have-an-alt-attribute-unless-they-have-an-aria-role-of-presentation for more information.
+
+Warning: AX_COLOR_01 (Text elements should have a reasonable contrast ratio) failed on the following element:
+#nearby-locations > H2
+See https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_color_01--text-elements-should-have-a-reasonable-contrast-ratio for more information.
+
+
+*** End accessibility audit results ***
+INFO main com.paypal.accessibility.AccessibilityScanner - 
