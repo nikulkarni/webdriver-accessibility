@@ -61,7 +61,9 @@ Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Ob
 Reporting in your Tests
 =======================
 Please take a look at a sample cucumber test I wrote and demonstrated how to imbed details of the output of webdriver-accessibility tool in test reports.
-A sample test report can be found ![here](/src/test/resources/cucumber-report.png?raw=true)
+A sample cucumber test report can be found below. Here you can notice that I embedded plain audit report and screenshot. In the screenshot, you can notice
+that the warnings are bordered yellow. There were no errors found on this site at the time.
+ ![test report](/src/test/resources/cucumber-report.png?raw=true)
 
 Contributing: 
 =======================
