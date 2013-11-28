@@ -58,6 +58,11 @@ Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Ob
 [2]: https://github.com/GoogleChrome/accessibility-developer-tools "GoogleChrome accessibility-developer-tools"
 [3]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules "GoogleChrome accessibility-developer-tools audit rules"
 
+Reporting in your Tests
+=======================
+Please take a look at a sample cucumber test I wrote and demonstrated how to imbed details of the output of webdriver-accessibility tool in test reports.
+A sample test report can be found ![here](/src/test/resources/cucumber-report.png?raw=true)
+
 Contributing: 
 =======================
 Fork the project and submit pull request if you like to add a feature/fix bugs etc.
