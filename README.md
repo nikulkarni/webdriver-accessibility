@@ -26,7 +26,7 @@ If you want specific details of the error, you could scan through the List of er
 List<Result> errors = (List<Result>) audit_report.get("error"); 
 for (Result error : errors) {
  log.info(error.getRule());//e.g. AX_TEXT_01
- log.info(error.getUrl());//e.g. [GoogleChrome accessibility-developer-tools][3] audit rules URL
+ log.info(error.getUrl());//e.g. [GoogleChrome accessibility-developer-tools][2] audit rules URL
  for (String element : error.getElements()) //violated elements
   log.info(element);//e.g. #myForm > P > INPUT
 }
@@ -58,11 +58,16 @@ Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Ob
 [2]: https://github.com/GoogleChrome/accessibility-developer-tools "GoogleChrome accessibility-developer-tools"
 [3]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules "GoogleChrome accessibility-developer-tools audit rules"
 [4]: https://twitter.com/nileshdk "@nileshdk"
+[5]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_01--controls-and-media-elements-should-have-labels "missing label rule"
+[6]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_02--images-should-have-an-alt-attribute-unless-they-have-an-aria-role-of-presentation "missing ALT attribute rule"
 Reporting in your Tests
 =======================
 Please take a look at a sample cucumber test I wrote and demonstrated how to imbed details of the output of webdriver-accessibility tool in test reports.
 A sample cucumber test report can be found below. Here you can notice that I embedded plain audit report and screenshot. In the screenshot, you can notice
-that the warnings are bordered yellow. There were no errors found on this site at the time.
+that input text boxes violated [missing label rule][5] and are threfore marked with red border. There are infact 24 violations of [missing label rule][5], 
+however [GoogleChrome accessibility-developer-tools][2] at most provides 5 errors/warnings of each type. Therefore only 5 input boxes with this certain violation are marked with red border.
+Also the small pizza image violated [missing ALT attribute rule][6] as a warning and therefore marked as yellow. 
+
  ![test report](/src/test/resources/report.png?raw=true)
 
 Contributing: 
