@@ -65,7 +65,7 @@ Reporting in your Tests
 Please take a look at a sample cucumber test I wrote and demonstrated how to embed details of the output of webdriver-accessibility tool in test reports.
 A sample cucumber test report can be found below. Here you can notice that I embedded plain audit report and screenshot. In the screenshot, you can notice
 that input text boxes violated [missing label rule][5] and are threfore marked with red border. There are infact 24 violations of [missing label rule][5], 
-however [GoogleChrome accessibility-developer-tools][2] at most provides 5 errors/warnings of each type. Therefore only 5 input boxes with this certain violation are marked with red border.
+in my example below however [GoogleChrome accessibility-developer-tools][2] at most provides 5 errors/warnings of each type. Therefore only 5 input boxes with this certain violation are marked with red border.
 Also the small pizza image violated [missing ALT attribute rule][6] as a warning and therefore marked as yellow. 
 
  ![test report](/src/test/resources/report.png?raw=true)
