@@ -1,12 +1,9 @@
 webdriver-accessibility
 =======================
 
-webdriver-accessibility is a Java tool that helps you run accessibility audits directly using [selenium webdriver][1]. It relies on [GoogleChrome accessibility-developer-tools][2] to run the audit. 
-Once the audit is run, the tool returns a meaningful Java object which can then later used for reporting. The tool also takes a screenshot of your
-webpage and marks errors & warnings. Currently errors are bordered with red and warnings with yellow. 
-This project is decoupled from Webdriver project in the sense that user would need to pass along
-a WebDriver object. It also assumes user is already on a page which he/she intends to run accessibility audits using this tool
-All you need to do in your project is
+webdriver-accessibility is a Java tool that helps you run accessibility audits directly using [selenium webdriver][1]. It relies on [GoogleChrome accessibility-developer-tools][2] to run the audit. Once the audit is run, the tool returns a meaningful Java object which can be used for reporting later. The tool also takes a screenshot of your
+webpage and marks errors & warnings. Currently errors are bordered with red and warnings with yellow. This project is decoupled from Webdriver project in the sense that user would need to pass along a WebDriver object. It also assumes user is already on a page which he/she intends to run accessibility audits using this tool
+This is what you would do,
 
 ```
    AccessibilityScanner scanner = new AccessibilityScanner(driver);
@@ -54,17 +51,11 @@ Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Ob
   /** @type {String} */
   information_link, //link to [GoogleChrome accessibility-developer-tools][3] audit rules wiki for more details
 ```
-[1]: https://code.google.com/p/selenium/wiki/GettingStarted "selenium webdriver"
-[2]: https://github.com/GoogleChrome/accessibility-developer-tools "GoogleChrome accessibility-developer-tools"
-[3]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules "GoogleChrome accessibility-developer-tools audit rules"
-[4]: https://twitter.com/nileshdk "@nileshdk"
-[5]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_01--controls-and-media-elements-should-have-labels "missing label rule"
-[6]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_02--images-should-have-an-alt-attribute-unless-they-have-an-aria-role-of-presentation "missing ALT attribute rule"
+
 Reporting in your Tests
 =======================
-Please take a look at a sample cucumber test I wrote and demonstrated how to embed details of the output of webdriver-accessibility tool in test reports.
-A sample cucumber test report can be found below. Here you can notice that I embedded plain audit report and screenshot. In the screenshot, you can notice
-that input text boxes violated [missing label rule][5] and are threfore marked with red border. There are infact 24 violations of [missing label rule][5], 
+Here is a sample cucumber report (test included in the project) that demonstrates how to embed details of the output of webdriver-accessibility tool in test reports.
+Here you can notice that I embedded plain audit report and screenshot. In the screenshot, you can notice that input text boxes violated [missing label rule][5] and are threfore marked with red border. There are infact 24 violations of [missing label rule][5], 
 in my example below however [GoogleChrome accessibility-developer-tools][2] at most provides 5 errors/warnings of each type. Therefore only 5 input boxes with this certain violation are marked with red border.
 Also the small pizza image violated [missing ALT attribute rule][6] as a warning and therefore marked as yellow. 
 
@@ -80,4 +71,11 @@ Contact me directly
 Twitter: [@nileshdk] [4]
 
 Email: nilesh.cric@gmail.com
+
+[1]: https://code.google.com/p/selenium/wiki/GettingStarted "selenium webdriver"
+[2]: https://github.com/GoogleChrome/accessibility-developer-tools "GoogleChrome accessibility-developer-tools"
+[3]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules "GoogleChrome accessibility-developer-tools audit rules"
+[4]: https://twitter.com/nileshdk "@nileshdk"
+[5]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_01--controls-and-media-elements-should-have-labels "missing label rule"
+[6]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_02--images-should-have-an-alt-attribute-unless-they-have-an-aria-role-of-presentation "missing ALT attribute rule"
 
