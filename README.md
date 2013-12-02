@@ -1,8 +1,7 @@
 webdriver-accessibility
 =======================
 
-Ever wanted to do accessibility scanning in your WebDriver tests in Java? webdriver-accessibility is a Java tool that helps you run accessibility audits using [selenium webdriver][1] and [GoogleChrome accessibility-developer-tools][2]. It relies on [GoogleChrome accessibility-developer-tools][2] to run the audit. Once the audit is run, the tool returns a meaningful Java object which can be used for reporting later. The tool also takes a screenshot of your webpage and marks errors & warnings. Currently errors are bordered with red and warnings with yellow. This project is decoupled from Webdriver project in the sense that user would need to pass along a WebDriver object. It also assumes user is already on a page which he/she intends to run accessibility audits using this tool
-This is what you would do,
+Ever wanted to do accessibility scanning in your WebDriver tests in Java? webdriver-accessibility is a Java tool that helps you run accessibility audits using [selenium webdriver][1] and [GoogleChrome accessibility-developer-tools][2]. It relies on [GoogleChrome accessibility-developer-tools][2] to run the audit. Once the audit is run, the tool returns a meaningful Java object which can be used for reporting later. The tool also takes a screenshot of your webpage and marks errors & warnings. Currently errors are bordered with red and warnings with yellow. This project is decoupled from Webdriver project in the sense that user would need to pass along a WebDriver object. It is assumed that the user is already on the page where accessibility scan is required to be run. This is what you would do,
 
 ```
    AccessibilityScanner scanner = new AccessibilityScanner(driver);
