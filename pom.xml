@@ -12,14 +12,25 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- This is the URL to which release artifacts would be published to -->
+        <releaseUrl>http://nexus.paypal.com/nexus/content/repositories/releases</releaseUrl>
+
+        <!-- This is the URL to which snapshot artifacts would be published to -->
+        <snapshotUrl>http://nexus.paypal.com/nexus/content/repositories/snapshots</snapshotUrl>
 	</properties>
 
-	<dependencies>
+    <repositories>
+        <repository>
+            <id>paypal</id>
+            <url>http://nexus.paypal.com/nexus/content/groups/public-all</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.35.0</version>
-			<scope>test</scope>
+			<version>2.43.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
