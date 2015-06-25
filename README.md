@@ -52,7 +52,25 @@ Once you run ```runAccessibilityAudit()``` method it returns a ```Map<String, Ob
 
 Reporting in your Tests
 =======================
-Here is a sample cucumber report (test included in the project) that demonstrates how to embed details of the output of webdriver-accessibility tool in test reports.
+
+webdriver-accessibility tool is agonistic any test framework. It can be used with JUNIT, TestNG, Cucumber-JVM etc.
+
+In TestNG or JUNIT you could use it as below,
+
+```java
+@Test
+public void testAccessibility() {
+   AccessibilityScanner scanner = new AccessibilityScanner(driver);
+   Map<String, Object> audit_report = scanner.runAccessibilityAudit();
+   
+   if (audit_report.containsKey("error")) {
+    List<Result> errors = (List<Result>) audit_report.get("error");
+    assertThat("No accessibility errors expected", errors.size(),equalTo(0));
+   }
+}
+```
+
+You could also use webdriver-accessibility with Cucumber-JVM, check `src/test/java` for code. Here is a sample cucumber report (test included in the project) that demonstrates how to embed details of the output of webdriver-accessibility tool in test reports.
 Here you can notice that I embedded plain audit report and screenshot. In the screenshot, you can notice that input text boxes violated [missing label rule][5] and are threfore marked with red border. There are infact 24 violations of [missing label rule][5], 
 in my example below however [GoogleChrome accessibility-developer-tools][2] at most provides 5 errors/warnings of each type. Therefore only 5 input boxes with this certain violation are marked with red border.
 Also the small pizza image violated [missing ALT attribute rule][6] as a warning and therefore marked as yellow. 
