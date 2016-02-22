@@ -7,7 +7,6 @@ import com.google.inject.Provider;
 
 public class WebDriverProvider implements Provider<WebDriver> {
 
-	@Override
 	public WebDriver get() {
 		return new FirefoxDriver();
 

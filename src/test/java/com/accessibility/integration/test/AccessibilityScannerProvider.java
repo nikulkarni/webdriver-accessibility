@@ -17,7 +17,6 @@ public class AccessibilityScannerProvider implements
 		this.driver = driver;
 	}
 
-	@Override
 	public AccessibilityScanner get() {
 		try {
 			return new AccessibilityScanner(driver);
