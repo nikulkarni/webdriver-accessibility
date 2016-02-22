@@ -32,8 +32,8 @@ class JsFactory {
 	}
 
 	private void load() throws IOException {
-		jquery_content = Jsoup.connect(JQUERY_CDN_URL).execute().body();
-		accessibility_content = Jsoup.connect(ACCESIBILITY_CDN_URL).execute()
+		jquery_content = Jsoup.connect(JQUERY_CDN_URL).ignoreContentType(true).execute().body();
+		accessibility_content = Jsoup.connect(ACCESIBILITY_CDN_URL).ignoreContentType(true).execute()
 				.body();
 	}
 
