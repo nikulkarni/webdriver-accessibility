@@ -13,16 +13,20 @@ public class ApplicationProperties {
 		this.properties = readFile(fileName);
 	}
 
-	public Properties readFile(String fileName) throws IOException {
-		InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
-		if (inputStream != null) {
-			Properties properties = new Properties();
-			properties.load(inputStream);
+	public Properties readFile(String fileName) {
+		Properties properties = new Properties();
+		try {
+			InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+			if (inputStream != null) {
+				properties.load(inputStream);
+			}
 			inputStream.close();
-			return properties;
-		} else {
-			throw new FileNotFoundException("property file '" + fileName + "' not found in the classpath");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		return properties;
 	}
 
 	public String getProperty(String property) {
