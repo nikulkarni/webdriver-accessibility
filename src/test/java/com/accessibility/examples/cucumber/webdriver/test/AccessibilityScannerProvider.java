@@ -1,4 +1,4 @@
-package com.accessibility.integration.test;
+package com.accessibility.examples.cucumber.webdriver.test;
 
 import java.io.IOException;
 
