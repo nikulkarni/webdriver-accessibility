@@ -84,7 +84,7 @@ public void testAccessibility() {
 }
 ```
 
-In this project, you can find two examples of how to use this library in JUnit and Cucumber-JVM under `src/test/java/com/accessibility/examples`
+In this project, you can find two examples of how to use this library in JUnit and Cucumber-JVM under `src/test/java/com/accessibility/examples`. Tests by default run on Firefox, please make sure your Firefox version is supported by selenium used in `webdriver-accessibility`
 
 While JUnit example is little straight forward,  Cucumber-JVM example is little more sophisticated, check under `src/test/java/com/accessibility/example` for code. Here is a sample cucumber report (test included in the project) that demonstrates how to embed details of the output of webdriver-accessibility tool in test reports.
 Here you can notice that I embedded plain audit report and screenshot. In the screenshot, you can notice that input text boxes violated [missing label rule][5] and are threfore marked with red border. There are infact 24 violations of [missing label rule][5], 
@@ -100,7 +100,7 @@ Disclaimer: I am no accessibility expert. I am open for suggestions.
 
 Issues
 ======
-Please provide necessary details to reproduce the issue and open them
+Please provide necessary details to reproduce the issue and open them as appropriate
 
 Contact
 =======
