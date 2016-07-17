@@ -1,4 +1,4 @@
-package com.accessibility.integration.test;
+package com.accessibility.examples.cucumber.webdriver.test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;

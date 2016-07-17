@@ -1,4 +1,4 @@
-package com.accessibility.integration.test;
+package com.accessibility.examples.cucumber.webdriver.test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertNotNull;
@@ -48,12 +48,11 @@ public class AccessibilityStepDefs {
 	public void I_run_accessibility_audit() throws Throwable {
 		audit_report = scanner.runAccessibilityAudit();
 		assertNotNull(audit_report);
-
-		if (audit_report.containsKey("plain_report"))
+		if (audit_report.containsKey("plain_report")) {
 			scenario.write(audit_report.get("plain_report").toString());
+		}
 	}
 
-	@SuppressWarnings("unchecked")
 	@Then("^I am able to run the scanner successfully$")
 	public void I_am_able_to_run_the_scanner_successfully() throws Throwable {
 		if (audit_report.containsKey("error")) {
@@ -65,17 +64,20 @@ public class AccessibilityStepDefs {
 				for (String element : error.getElements())
 					log.info(element);//e.g. #myForm > P > INPUT
 			}
-			assertThat("No accessibility errors expected", errors.size(),
-					equalTo(0));
+
+//			One can add asserts like these
+//			assertThat("No accessibility errors expected", errors.size(),
+//					equalTo(0));
 		}
 	}
 
 	@After
-	public void teaeDown(Scenario scenario) {
+	public void tearDown(Scenario scenario) {
 		try {
 			if (audit_report != null && audit_report.containsKey("screenshot")) {
 				final byte[] screenshot = (byte[]) audit_report
 						.get("screenshot");
+				log.warn("Writing screenshot ");
 				scenario.embed(screenshot, "image/png");
 			}
 		} finally {

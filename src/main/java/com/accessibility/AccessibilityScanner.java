@@ -25,6 +25,7 @@ public class AccessibilityScanner {
 		this.driver = driver;
 		js = (JavascriptExecutor) driver;
 		jsFactory = JsFactory.getInstance();
+
 	}
 
 	public Map<String, Object> runAccessibilityAudit() throws IOException {
